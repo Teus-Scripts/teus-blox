@@ -2,8 +2,8 @@ repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 getgenv().Setting = {
     ["Team"] = "Pirates", -- Start With Team Pirates, Marines
     ["WhiteScreen"] = false, -- White Screen
-    ["FpsBoost"] = false, -- Fps Boost
-    ["AutoRejoin"] = true, -- AutoRejoin
+    ["FpsBoost"] = true, -- Fps Boost
+    ["AutoRejoin"] = false, -- AutoRejoin
     ["Discord"] = "https://discord.com/invite/mhTES79Dn9",
     ["RemoveEffect"] = true,
     ["RandomFruit"] = true,
@@ -2676,23 +2676,9 @@ end)
 			end
 		end
 	end)
-	
-	_G.Grabfruit = true
-	
-	spawn(function()
-		while wait(.1) do
-			if _G.Grabfruit then
-				for i,v in pairs(game.Workspace:GetChildren()) do
-					if string.find(v.Name, "Fruit") then
-					v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-					end
-				end
-			end
-        end
-    end)
        
     
-    BypassTP = true
+    BypassTP = false
     
         PosY = 20
         
@@ -2718,20 +2704,6 @@ end)
 			end
 		end)
     end
-    end)
-    
-    _G.AutoRejoin = true
-       
-    spawn(function()
-    while wait() do
-        if _G.AutoRejoin then
-                getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
-                    if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
-                        game:GetService("TeleportService"):Teleport(game.PlaceId)
-                    end
-                end)
-            end
-        end
     end)
     
     spawn(function()
