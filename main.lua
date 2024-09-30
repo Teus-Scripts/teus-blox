@@ -2,8 +2,8 @@ repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 getgenv().Setting = {
     ["Team"] = "Pirates", -- Start With Team Pirates, Marines
     ["WhiteScreen"] = false, -- White Screen
-    ["FpsBoost"] = true, -- Fps Boost
-    ["AutoRejoin"] = false, -- AutoRejoin
+    ["FpsBoost"] = false, -- Fps Boost
+    ["AutoRejoin"] = true, -- AutoRejoin
     ["Discord"] = "https://discord.com/invite/mhTES79Dn9",
     ["RemoveEffect"] = true,
     ["RandomFruit"] = true,
